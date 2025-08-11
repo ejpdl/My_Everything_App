@@ -5,13 +5,14 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+const https = require('https');
 
 const app = express();
 
-app.use(cors({ origin: '*' }));
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 
 const logger = (req, res, next) => {
@@ -322,4 +323,5 @@ app.listen(PORT, () => {
 
 
 });
+
 
