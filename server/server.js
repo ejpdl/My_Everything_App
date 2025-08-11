@@ -8,10 +8,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
+
 
 const logger = (req, res, next) => {
 
@@ -321,3 +322,4 @@ app.listen(PORT, () => {
 
 
 });
+
